@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    
+    <div class="table-header">
+        <h2>PAYSLIP</h2>
+    </div>
+    <table>
+        
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Taxed Amount</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Salary</td>
+                <td>-</td>
+                <td>€ {{ salary }}</td>
+            </tr>
+            <tr>
+                <td>0.5%</td>
+                <td>€ {{ usc[0]['0.5'] }}</td>
+                <td>€ {{ usc[0]['usc'] }}</td>
+            </tr>
+            <tr>
+                <td>2%</td>
+                <td>€ {{ usc[1]['2.0'] }}</td>
+                <td>€ {{ usc[1]['usc'] }}</td>
+            </tr>
+            {% if usc[3] and usc[4] %}
+                <tr>
+                    <td>4%</td>
+                    <td>€ {{ usc[2]['4.0'] }}</td>
+                    <td>€ {{ usc[2]['usc'] }}</td>
+                </tr>
+                <tr>
+                    <td>8%</td>
+                    <td>€ {{ usc[3]['8.0'] }}</td>
+                    <td>€ {{ usc[3]['usc'] }}</td>
+                </tr>
+            {% else %}
+                {% if usc[2] and usc[3] %}
+                    <tr>
+                        <td>4%</td>
+                        <td>€ {{ usc[2]['4.0'] }}</td>
+                        <td>€ {{ usc[2]['usc'] }}</td>
+                    </tr>
+                {% endif %}
+            {% endif %}
+            <tr class="total">
+                <td>Yearly Total</td>
+                <td>-</td>
+                <td>€ {{ usc[-1]['annual_total'] }}</td>
+            </tr>
+            <tr class="total">
+                <td>Weekly Total</td>
+                <td>-</td>
+                <td>{{ usc[-1]['weekly_total'] }}</td>
+            </tr>
+        </tbody>
+
+    </table>
+
+    <a href="{{ url_for('payslip') }}" class="links">Back</a>
+    
+</div>
+
+{% endblock %}

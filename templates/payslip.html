@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    
+    <div class="table-header">
+        <h2>PAYSLIP</h2>
+    </div>
+    <p>{{ hour }} | {{ date }}.</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Salary</td>
+                <td>€ {{ payslip['salary'] }}</td>
+            </tr>
+            {% if payslip['prsi'] %}
+                <tr>
+                    <td>PRSI</td>
+                    <td>€ {{ payslip['prsi'] }}</td>
+                </tr>
+            {% endif %}
+            {% if payslip['paye'] %}
+                <tr>
+                    <td>PAYE</td>
+                    <td>€ {{ payslip['paye'] }}</td>
+                </tr>
+            {% endif %}
+            {% if payslip['usc'] %}
+                <tr>
+                    <td>USC</td>
+                    <td>€ {{ payslip['usc'] }}</td>
+                </tr>
+            {% endif %}
+            <tr class="total">
+                <td>Net</td>
+                <td>€ {{ payslip['net_salary'] }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    {% if payslip['usc'] %}
+        <a href="{{ url_for('usc') }}" class="links">See detailed USC</a>
+    {% endif %}
+
+</div>
+{% endblock %}
