@@ -122,5 +122,6 @@ class Payslip:
                  'weekly_total': round((usc_tot / 52), 2)}]
     
     def export_usc(self, salary) -> str:
+        '''This public method exports the USC when called outside the Class'''
         usc = self.__get_usc(salary)
         return usc

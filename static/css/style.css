@@ -45,7 +45,7 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
-/* ############################### MAIN PAGE ############################### */
+/* ############################### CALCULATOR PAGE ############################### */
 .title {
     font-size: 30px;
     margin-bottom: 20px;
@@ -56,6 +56,7 @@ nav ul li a:hover {
 
 label {
     display: inline-block;
+    /* display: flex;  */
     margin-bottom: 5px;
     font-weight: bold;
 }
@@ -65,11 +66,17 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 5px;
 }
-input, button {
+input {
     width: 150px;
     font-size: 18px;
     padding: 2px;
-    margin: 2px;
+    margin: 10px;
+}
+button {
+    width: 150px;
+    font-size: 18px;
+    padding: 2px;
+    margin-top: 10px;
 }
 
 button:hover {
@@ -77,9 +84,9 @@ button:hover {
     background-color: #008080;
 }
 select {
+    margin-left: 19px;
     padding: 2px;
-    margin: 2px;
-    width: 150px;
+    width: 157px;
     text-align: left;
     font-size: 20px;
 }
@@ -130,7 +137,6 @@ th {
     text-align: justify;
 }
 
-/* Estilização do parágrafo de ênfase */
 .emphasis-paragraph {
     font-style: italic;
     font-weight: bold;

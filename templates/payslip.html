@@ -19,16 +19,16 @@
                 <td>Salary</td>
                 <td>€ {{ payslip['salary'] }}</td>
             </tr>
-            {% if payslip['prsi'] %}
-                <tr>
-                    <td>PRSI</td>
-                    <td>€ {{ payslip['prsi'] }}</td>
-                </tr>
-            {% endif %}
             {% if payslip['paye'] %}
                 <tr>
                     <td>PAYE</td>
                     <td>€ {{ payslip['paye'] }}</td>
+                </tr>
+            {% endif %}
+            {% if payslip['prsi'] %}
+                <tr>
+                    <td>PRSI</td>
+                    <td>€ {{ payslip['prsi'] }}</td>
                 </tr>
             {% endif %}
             {% if payslip['usc'] %}
