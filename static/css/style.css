@@ -83,8 +83,17 @@ button:hover {
     color: #FFFFFF;
     background-color: #008080;
 }
-select {
+.optum {
     margin-left: 19px;
+    margin-bottom: 10px;
+    padding: 2px;
+    width: 157px;
+    text-align: left;
+    font-size: 20px;
+}
+.opt {
+    margin-left: 7px;
+    margin-bottom: 10px;
     padding: 2px;
     width: 157px;
     text-align: left;
